@@ -5,6 +5,7 @@
  */
 package trabalho_opmatrizes;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,6 @@ public class Trabalho_opMatrizes {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    String matriz1;
     
     Scanner scan = new Scanner(System.in);
     
@@ -29,23 +29,28 @@ public class Trabalho_opMatrizes {
     //String[][] matrizVetor = arrayVetor.split(",");
     //System.out.println(Arrays.toString(arrayVetor));
     
-    String input;
+    String vetorEnt;
     System.out.println("Informe a primeira matriz, com base no seguinte exemplo:");
-    input = scan.nextLine();
-    String[] rows = input.split(",");
+    vetorEnt = scan.nextLine();
+    String[] vetor1 = vetorEnt.split(",");
+    System.out.println("Vetor quebrado" + Arrays.toString(vetor1));
         
-    String[][] matrix = new String[rows.length][];
+    String[][] matriz1 = new String[vetor1.length][];
 
-    for (int i = 0; i < matrix.length; i++) {
-      matrix[i] = rows[i].split("\\s");
+    for (int i = 0; i < matriz1.length; i++) {
+      matriz1[i] = vetor1[i].split("\\s");
     }
 
-    for (int i = 0; i < matrix.length; i++) {
-      for (int j = 0; j < matrix[i].length; j++) {
-        System.out.print(matrix[i][j]);
+    for (int i = 0; i < matriz1.length; i++) {
+      for (int j = 0; j < matriz1[i].length; j++) {
+        System.out.print(matriz1[i][j] + "");
       }
       System.out.println();
     }
+    System.out.println(matriz1.length);
+    System.out.println(vetor1.length);
+    System.out.println(matriz1.length+" X "+matriz1[0].length);
+    System.out.println(Arrays.toString(matriz1));
     
   }
   
