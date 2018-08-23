@@ -31,6 +31,8 @@ public class Trabalho_opMatrizes {
     
     System.out.println("Informe a primeira matriz:");
     String vetorEnt = scan.nextLine();
+    vetorEnt = vetorEnt.replace("[", "");
+    vetorEnt = vetorEnt.replace("]", "");
     String[] vetor1 = vetorEnt.split(",");
     System.out.println("Vetor quebrado" + Arrays.toString(vetor1));
         
