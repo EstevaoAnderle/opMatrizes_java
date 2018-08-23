@@ -29,9 +29,8 @@ public class Trabalho_opMatrizes {
     //String[][] matrizVetor = arrayVetor.split(",");
     //System.out.println(Arrays.toString(arrayVetor));
     
-    String vetorEnt;
-    System.out.println("Informe a primeira matriz, com base no seguinte exemplo:");
-    vetorEnt = scan.nextLine();
+    System.out.println("Informe a primeira matriz:");
+    String vetorEnt = scan.nextLine();
     String[] vetor1 = vetorEnt.split(",");
     System.out.println("Vetor quebrado" + Arrays.toString(vetor1));
         
@@ -43,14 +42,12 @@ public class Trabalho_opMatrizes {
 
     for (int i = 0; i < matriz1.length; i++) {
       for (int j = 0; j < matriz1[i].length; j++) {
-        System.out.print(matriz1[i][j] + "");
+        //System.out.print(matriz1[i][j] + "");
+        System.out.print(matriz1[i][j] + "|");
       }
       System.out.println();
     }
-    System.out.println(matriz1.length);
-    System.out.println(vetor1.length);
     System.out.println(matriz1.length+" X "+matriz1[0].length);
-    System.out.println(Arrays.toString(matriz1));
     
   }
   
