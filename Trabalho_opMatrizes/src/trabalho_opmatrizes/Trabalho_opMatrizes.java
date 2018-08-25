@@ -7,6 +7,9 @@ package trabalho_opmatrizes;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
 
 /**
  *
@@ -33,13 +36,14 @@ public class Trabalho_opMatrizes {
     String vetorEnt = scan.nextLine();
     vetorEnt = vetorEnt.replace("[", "");
     vetorEnt = vetorEnt.replace("]", "");
-    String[] vetor1 = vetorEnt.split(",");
+    //adicionar explicação
+    String[] vetor1 = vetorEnt.split(",+\\s+|,+|\\s+,+");
     System.out.println("Vetor quebrado" + Arrays.toString(vetor1));
         
     String[][] matriz1 = new String[vetor1.length][];
 
     for (int i = 0; i < matriz1.length; i++) {
-      matriz1[i] = vetor1[i].split("\\s");
+      matriz1[i] = vetor1[i].split("\\s+");
     }
 
     for (int i = 0; i < matriz1.length; i++) {
@@ -49,7 +53,16 @@ public class Trabalho_opMatrizes {
       }
       System.out.println();
     }
-    System.out.println(matriz1.length+" X "+matriz1[0].length);
+    System.out.println(matriz1.length+" X "+matriz1[1].length);
+    
+    //adicionar verificação para matriz de uma linha só
+    
+    for (int i = 0; i < matriz1.length; i++) {
+      if (matriz1[i].length < matriz1[(i+1)].length || matriz1[(i+1)].length < matriz1[i].length) {
+        System.out.println("Matriz inválida. Tente novamente!");
+        break;
+      }
+    }
     
   }
   
