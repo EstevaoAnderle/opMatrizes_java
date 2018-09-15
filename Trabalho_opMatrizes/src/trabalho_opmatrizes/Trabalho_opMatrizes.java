@@ -7,8 +7,6 @@ package trabalho_opmatrizes;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 
 /**
@@ -37,7 +35,8 @@ public class Trabalho_opMatrizes {
     vetorEnt = vetorEnt.replace("[", "");
     vetorEnt = vetorEnt.replace("]", "");
     //adicionar explicação
-    String[] vetor1 = vetorEnt.split(",+\\s+|,+|\\s+,+");
+    //adicionar validação por ponto   
+    String[] vetor1 = vetorEnt.split("\\s*,+\\s*");    
     System.out.println("Vetor quebrado" + Arrays.toString(vetor1));
         
     String[][] matriz1 = new String[vetor1.length][];
@@ -57,8 +56,10 @@ public class Trabalho_opMatrizes {
     
     //adicionar verificação para matriz de uma linha só
     
-    for (int i = 0; i < matriz1.length; i++) {
-      if (matriz1[i].length < matriz1[(i+1)].length || matriz1[(i+1)].length < matriz1[i].length) {
+    for (int i = 0; i < matriz1.length-1; i++) {
+      
+      if (matriz1[i].length != matriz1[(i+1)].length) {
+        
         System.out.println("Matriz inválida. Tente novamente!");
         break;
       }
