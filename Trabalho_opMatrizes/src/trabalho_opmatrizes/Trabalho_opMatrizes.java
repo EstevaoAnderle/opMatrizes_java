@@ -61,38 +61,38 @@ public class Trabalho_opMatrizes {
         matrizConvert2.vetorParaMatriz(matrizConvert2.vetor);
 
         //Conversão para romano da primeira matriz
-        int convertido = 0;
-
-        for (int i = 0; i < matrizConvert.matriz.length; i++) {
-            //inicilização da matriz
-            //aqui está dizendo quantas colunas tem em cada linha
-            matrizConvert.matrizConvertida[i] = new Integer[matrizConvert.matriz[i].length];
-
-            for (int j = 0; j < matrizConvert.matriz[i].length; j++) {
-                System.out.print(matrizConvert.matriz[i][j] + "|");
-
-                convertido = matrizConvert.traduzirNumeralRomano1(matrizConvert.matriz[i][j]);
-                matrizConvert.matrizConvertida[i][j] = convertido;
-            }
-            System.out.println();
-        }
+//        int convertido = 0;
+//
+//        for (int i = 0; i < matrizConvert.matriz.length; i++) {
+//            //inicilização da matriz
+//            //aqui está dizendo quantas colunas tem em cada linha
+//            matrizConvert.matrizConvertida[i] = new Integer[matrizConvert.matriz[i].length];
+//
+//            for (int j = 0; j < matrizConvert.matriz[i].length; j++) {
+//                System.out.print(matrizConvert.matriz[i][j] + "|");
+//
+//                convertido = matrizConvert.traduzirNumeralRomano1(matrizConvert.matriz[i][j]);
+//                matrizConvert.matrizConvertida[i][j] = convertido;
+//            }
+//            System.out.println();
+//        }
+        matrizConvert.conversaoMatriz(matrizConvert.matriz);
 
         //Conversão para romano da segunda matriz
-        int convertido2 = 0;
-        for (int i = 0; i < matrizConvert2.matriz.length; i++) {
-            //inicilização da matriz
-            //aqui está dizendo quantas colunas tem em cada linha
-            matrizConvert2.matrizConvertida[i] = new Integer[matrizConvert2.matriz[i].length];
-
-            for (int j = 0; j < matrizConvert2.matriz[i].length; j++) {
-                System.out.print(matrizConvert2.matriz[i][j] + "|");
-
-                convertido2 = matrizConvert2.traduzirNumeralRomano1(matrizConvert2.matriz[i][j]);
-                matrizConvert2.matrizConvertida[i][j] = convertido2;
-            }
-            System.out.println();
-        }
-
+//        int convertido2 = 0;
+//        for (int i = 0; i < matrizConvert2.matriz.length; i++) {
+//            //inicilização da matriz
+//            //aqui está dizendo quantas colunas tem em cada linha
+//            matrizConvert2.matrizConvertida[i] = new Integer[matrizConvert2.matriz[i].length];
+//
+//            for (int j = 0; j < matrizConvert2.matriz[i].length; j++) {
+//                System.out.print(matrizConvert2.matriz[i][j] + "|");
+//
+//                convertido2 = matrizConvert2.traduzirNumeralRomano1(matrizConvert2.matriz[i][j]);
+//                matrizConvert2.matrizConvertida[i][j] = convertido2;
+//            }
+//            System.out.println();
+//        }
         //Escrita da matriz 1 convertida
         System.out.println("Conversão da primeira matriz:");
         for (int i = 0; i < matrizConvert.matrizConvertida.length; i++) {
@@ -116,6 +116,7 @@ public class Trabalho_opMatrizes {
         }
 
         System.out.println(matrizConvert2.matrizConvertida.length + " X " + matrizConvert2.matrizConvertida[0].length);
+        
 
         //adicionar verificação para matriz de uma linha só
 //        for (int i = 0; i < matrizConvert.matriz.length - 1; i++) {
