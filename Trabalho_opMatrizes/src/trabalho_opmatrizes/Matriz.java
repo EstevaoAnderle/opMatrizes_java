@@ -73,23 +73,31 @@ public class Matriz {
     }
 
     //Aqui ele realiza a conversão de números decimais para romanos.
-    //Verificar quando o resultado é negativo e zero.
     public String[][] converterEmRomanos(Integer[][] matrizResultado) {
         int[] decimais = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] romanos = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X",
             "IX", "V", "IV", "I"};
 
         matrizFinal = new String[matrizResultado.length][];
+        
 
         for (int i = 0; i < matrizResultado.length; i++) {
             matrizFinal[i] = new String[matrizResultado[i].length];
+            
 
             for (int j = 0; j < matrizResultado[i].length; j++) {
+                StringBuilder result = new StringBuilder();
                 for (int k = 0; k < decimais.length; k++) {
-                    StringBuilder result = new StringBuilder();
+                    //Essa classe permite manipular e criar dados de Strings de
+                    //forma dinâmica - pode criar variáveis de String modificáveis.
+                    
                     int parteInteira = matrizResultado[i][j] / decimais[k];
                     matrizResultado[i][j] -= decimais[k] * parteInteira;
 
+                    /*Esse método aloca novas strings concatenadas para o mesmo
+                    objeto, ou seja, cada vez que concatena strings não são
+                    criadas cópias dos objetos, favorecendo o desempenho do sistema.
+                     */
                     result.append(String.join("", nCopies(parteInteira, romanos[k])));
                     matrizFinal[i][j] = result.toString();
                 }
@@ -97,7 +105,7 @@ public class Matriz {
             }
         }
 
-        System.out.println("A conversão das matrizes é:");
+        System.out.println("A conversão das matrizes para romano é:");
         for (int i = 0; i < matrizFinal.length; i++) {
             for (int j = 0; j < matrizFinal[i].length; j++) {
                 System.out.print(matrizFinal[i][j] + "|");
@@ -146,6 +154,7 @@ public class Matriz {
 
         if (matrizConvert.length != matrizConvert2.length || matrizConvert[0].length != matrizConvert2[0].length) {
             System.out.println("As dimensões das matrizes são diferentes, logo, não é possível realizar essa operação.");
+            System.exit(0);
         } else {
             for (int i = 0; i < matrizConvert.length; i++) {
                 matrizResultado[i] = new Integer[matrizConvert[i].length];
@@ -171,6 +180,7 @@ public class Matriz {
 
         if (matrizConvert.length != matrizConvert2.length || matrizConvert[0].length != matrizConvert2[0].length) {
             System.out.println("As dimensões das matrizes são diferentes, logo, não é possível realizar essa operação.");
+            System.exit(0);
         } else {
             for (int i = 0; i < matrizConvert.length; i++) {
                 matrizResultado[i] = new Integer[matrizConvert[i].length];
@@ -196,6 +206,7 @@ public class Matriz {
 
         if (matrizConvert.length != matrizConvert2[0].length) {
             System.out.println("As dimensões das matrizes são diferentes, logo, não é possível realizar essa operação.");
+            System.exit(0);
         } else {
             for (int i = 0; i < matrizConvert.length; i++) {
                 matrizResultado[i] = new Integer[matrizConvert2[i].length];

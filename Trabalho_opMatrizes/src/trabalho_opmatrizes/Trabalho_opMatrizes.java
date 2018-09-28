@@ -76,8 +76,8 @@ public class Trabalho_opMatrizes {
 
                 matrizResultado.subtracao(matrizConvert.matrizConvertida,
                         matrizConvert2.matrizConvertida);
-                matrizFinal.converterEmRomanos(matrizResultado.matrizResultado);
-
+                System.out.println("Como a subtração poderia ocasionar em números negativos,"
+                        + "foi optado por deixar a mesma sem a conversão final para romanos.");
                 break;
 
             //Multiplicação das matrizes
@@ -101,7 +101,7 @@ public class Trabalho_opMatrizes {
 
                 break;
 
-            //Produto escalar.
+            //Produto escalar
             case "4":
                 System.out.println("Informe a matriz:");
                 vetorEnt = scan.nextLine().toUpperCase();
@@ -132,6 +132,7 @@ public class Trabalho_opMatrizes {
 //
 //        System.out.println(matrizConvert.matrizConvertida.length + " X " +
 //              matrizConvert.matrizConvertida[0].length);
+
         //Escrita da matriz 2 convertida
 //        System.out.println("Conversão da segunda matriz:");
 //        for (int i = 0; i < matrizConvert2.matrizConvertida.length; i++) {
